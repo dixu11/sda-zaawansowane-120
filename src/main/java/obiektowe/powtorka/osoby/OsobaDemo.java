@@ -25,5 +25,13 @@ public class OsobaDemo {
 
         System.out.println(osoba1);
         System.out.println(osoba2);
+
+        osoba1.przywitajSie();
+        osoba2.przywitajSie();
+
+        osoba1.wyprawUrodziny();
+
+        osoba1.przywitajSie();
+        osoba2.przywitajSie();
     }
 }

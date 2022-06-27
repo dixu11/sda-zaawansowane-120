@@ -6,7 +6,13 @@ public class Osoba {
     int wiek;
 
 
+     void przywitajSie() {
+        System.out.println("Jestem " + imie + " mam " + wiek + " lat");
+    }
 
+    void wyprawUrodziny() {
+        wiek++;
+    }
 
 
 
