@@ -9,14 +9,15 @@ public class OsobaDemo {
         Random random = new Random();
         int[] liczby = new int[]{1,2,3,4};
 
+//        Osoba osoba1 = new Osoba("Radek",30);
         Osoba osoba1 = new Osoba();
-        osoba1.imie = "Radek";
-        osoba1.wiek = 30;
+//        osoba1.imie = "Radek";
+//        osoba1.wiek = 30;
 
 
-        Osoba osoba2 = new Osoba();
-        osoba2.imie = "Zofia";
-        osoba2.wiek = 25;
+        Osoba osoba2 = new Osoba("Zofia",25);
+//        osoba2.imie = "Zofia";
+//        osoba2.wiek = 25;
 
        // System.out.println(Osoba.imie);
 
