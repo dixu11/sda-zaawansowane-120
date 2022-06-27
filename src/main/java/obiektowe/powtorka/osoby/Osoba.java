@@ -2,7 +2,7 @@ package obiektowe.powtorka.osoby;
 
 import java.util.Random;
 
-public class Osoba {
+public class Osoba{
 
      String imie;
     int wiek;
@@ -33,9 +33,17 @@ public class Osoba {
         wiek++;
     }
 
+/*@Override
+    public String toString(){
+      return   "Jestem " + imie + " mam " + wiek + " lat";
+    }*/
 
 
-
-
-
+    @Override
+    public String toString() {
+        return "Osoba{" +
+                "imie='" + imie + '\'' +
+                ", wiek=" + wiek +
+                '}';
+    }
 }

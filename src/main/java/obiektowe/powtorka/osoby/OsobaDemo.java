@@ -9,10 +9,16 @@ public class OsobaDemo {
         Random random = new Random();
         int[] liczby = new int[]{1,2,3,4};
 
+
+
 //        Osoba osoba1 = new Osoba("Radek",30);
+        //Object osoba1 = new Osoba();
         Osoba osoba1 = new Osoba();
+        // osoba1 = new Random();
+
 //        osoba1.imie = "Radek";
 //        osoba1.wiek = 30;
+
 
 
         Osoba osoba2 = new Osoba("Zofia",25);
@@ -34,5 +40,12 @@ public class OsobaDemo {
 
         osoba1.przywitajSie();
         osoba2.przywitajSie();
+
+//        --------- toString ----------
+        //Object object = new Osoba();
+        System.out.println(osoba1.toString());
+        System.out.println(osoba2);
+
+
     }
 }
