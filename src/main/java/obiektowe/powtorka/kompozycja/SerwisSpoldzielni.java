@@ -8,12 +8,13 @@ public class SerwisSpoldzielni {
         this.blok = blok;
     }
 
-    public void oplacCzynsz(int numerMieszkania){
-       Mieszkanie mieszkanie =  blok.znajdzMieszkanie(numerMieszkania);
-        System.out.println(mieszkanie);
+    public void oplacCzynsz(int numerMieszkania) {
+        Mieszkanie mieszkanie = blok.znajdzMieszkanie(numerMieszkania);
+        if (mieszkanie == null) {
+            return;
+        }
+        mieszkanie.oplac();
     }
-
-
 
 
 }
