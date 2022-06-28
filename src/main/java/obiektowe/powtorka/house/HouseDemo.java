@@ -33,5 +33,11 @@ public class HouseDemo {
 
         System.out.println(room);
         System.out.println(room2);
+
+        //dom
+        Room[] rooms = {room, room2};
+        House house = new House(rooms);
+        house.tidy();
+        System.out.println(house);
     }
 }

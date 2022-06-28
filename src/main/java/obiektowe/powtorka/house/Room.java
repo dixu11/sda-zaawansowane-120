@@ -20,6 +20,13 @@ public class Room {
        windows[1] = new Window();
    }
 
+   public void tidy(){
+        bed.clean();
+       for (Window window : windows) {
+           window.doOpen();
+       }
+   }
+
     @Override
     public String toString() {
         return "Room{" +
