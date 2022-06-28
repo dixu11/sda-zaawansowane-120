@@ -2,8 +2,15 @@ package obiektowe.powtorka.kompozycja;
 
 public class SerwisSpoldzielni {
 
-    public void oplacCzynsz(int numerMieszkania){
+    private Blok blok;
 
+    public SerwisSpoldzielni(Blok blok) {
+        this.blok = blok;
+    }
+
+    public void oplacCzynsz(int numerMieszkania){
+       Mieszkanie mieszkanie =  blok.znajdzMieszkanie(numerMieszkania);
+        System.out.println(mieszkanie);
     }
 
 

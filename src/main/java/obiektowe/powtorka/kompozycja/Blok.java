@@ -9,6 +9,15 @@ public class Blok {
         this.mieszkania = mieszkania;
     }
 
+    public Mieszkanie znajdzMieszkanie(int numerMieszkania){
+        for(Mieszkanie mieszkanie : mieszkania){
+            if (mieszkanie.getNumer() == numerMieszkania) {
+                return  mieszkanie;
+            }
+        }
+        return  null; //todo refactor!
+    }
+
     @Override
     public String toString() {
         return "Blok{" +

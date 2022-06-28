@@ -18,7 +18,7 @@ public class BlokDemo {
 
         System.out.println(blok);
 
-        SerwisSpoldzielni serwisSpoldzielni = new SerwisSpoldzielni();
+        SerwisSpoldzielni serwisSpoldzielni = new SerwisSpoldzielni(blok);
         serwisSpoldzielni.oplacCzynsz(4);
 
         System.out.println(blok);

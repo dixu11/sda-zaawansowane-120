@@ -13,7 +13,9 @@ public class Mieszkanie {
         oplacono = true;
     }
 
-
+    public int getNumer() {
+        return numer;
+    }
     @Override
     public String toString() {
         return "Mieszkanie{" +
