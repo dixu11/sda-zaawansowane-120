@@ -26,5 +26,12 @@ public class HouseDemo {
         Bed bed = new Bed(4);
         bed.clean();
         System.out.println(bed);
+
+        //room
+        Room room = new Room();
+        Room room2 = new Room(bed, windows);
+
+        System.out.println(room);
+        System.out.println(room2);
     }
 }
