@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Osoba{
 
-     String imie;
-    int wiek;
+   private   String imie;
+   private int wiek;
 
 
     /*public Osoba(String startoweImie, int startowyWiek){
@@ -33,11 +33,24 @@ public class Osoba{
         wiek++;
     }
 
+    String getImie() {
+        return imie;
+    }
+
+
 /*@Override
     public String toString(){
       return   "Jestem " + imie + " mam " + wiek + " lat";
     }*/
 
+
+    public void setWiek(int wiek){
+        this.wiek = wiek;
+    }
+
+    public int getWiek() {
+        return wiek;
+    }
 
     @Override
     public String toString() {

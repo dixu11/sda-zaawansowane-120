@@ -27,8 +27,10 @@ public class OsobaDemo {
 
        // System.out.println(Osoba.imie);
 
-        System.out.println(osoba1.imie);
-        System.out.println(osoba2.imie);
+//        System.out.println(osoba1.imie);
+//        System.out.println(osoba2.imie);
+        System.out.println(osoba1.getImie());
+        System.out.println(osoba2.getImie());
 
         System.out.println(osoba1);
         System.out.println(osoba2);
@@ -46,6 +48,9 @@ public class OsobaDemo {
         System.out.println(osoba1.toString());
         System.out.println(osoba2);
 
+//        --------- enkapsulacja -----
+        osoba1.setWiek(osoba1.getWiek() + 1);
+        osoba1.setWiek(-1000000);
 
     }
 }
