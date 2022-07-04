@@ -2,14 +2,18 @@ package obiektowe.enums;
 
 public class Shirt {
 
-    private String size;
+    private Size size;
 
-    public Shirt(String size) {
+    public Shirt(Size size) {
         this.size = size;
     }
 
-    public String getSize() {
+    public Size getSize() {
         return size;
+    }
+
+    public int getNumericSize() {
+        return size.getNumericSize();
     }
 
     @Override

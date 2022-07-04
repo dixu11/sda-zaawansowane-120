@@ -5,23 +5,21 @@ public class Shop {
     public void pack(Shirt shirt) {
 
         switch (shirt.getSize()){
-            case Sizes.XXL:
-            case Sizes.XL:
-            case Sizes.L:
-            case Sizes.M:
+            case XXL:
+            case XL:
+            case L:
+            case M:
                 System.out.println("Pakuję do dużej torby");
                 break;
-            case Sizes.S:
-            case Sizes.XS:
-            case Sizes.XXS:
+            case S:
+            case XS:
+            case XXS:
                 System.out.println("Pakuję do małej torby");
                 break;
             default:
                 System.out.println("Nie rozpoznano rozmiaru");
-
-
-
         }
+        System.out.println("Rozmiar liczbowo: " + shirt.getNumericSize());
 
 
     }
