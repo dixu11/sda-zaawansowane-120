@@ -33,6 +33,10 @@ public class Whale extends Animal{
         System.out.println("Czyli je plankton");
     }
 
+    public void makeSound() {
+        booing();
+    }
+
 
 
 
