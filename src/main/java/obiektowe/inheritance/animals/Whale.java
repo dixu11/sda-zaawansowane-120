@@ -1,9 +1,7 @@
-package obiektowe.inheritance;
+package obiektowe.inheritance.animals;
 
 public class Whale extends Animal{
 
-    private String name;
-    private int age;
     private double weight;
 
 

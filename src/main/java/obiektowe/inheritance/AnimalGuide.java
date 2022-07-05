@@ -1,5 +1,7 @@
 package obiektowe.inheritance;
 
+import obiektowe.inheritance.animals.Animal;
+
 public class AnimalGuide {
 
     public void feedAnimal(Animal animal){

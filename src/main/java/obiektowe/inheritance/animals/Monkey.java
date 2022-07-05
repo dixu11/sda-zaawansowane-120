@@ -1,8 +1,7 @@
-package obiektowe.inheritance;
+package obiektowe.inheritance.animals;
 
 public class Monkey extends Animal{
-    private String name;
-    private int age;
+
     private int tailLength;
 
     public Monkey(String name, int age, int tailLength) {

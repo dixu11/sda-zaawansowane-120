@@ -1,5 +1,10 @@
 package obiektowe.inheritance;
 
+import obiektowe.inheritance.animals.Animal;
+import obiektowe.inheritance.animals.Cow;
+import obiektowe.inheritance.animals.Monkey;
+import obiektowe.inheritance.animals.Whale;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +51,7 @@ public class AnimalsDemo {
         animal.makeSound();
         animal = new Monkey();
         animal.makeSound();
-        animal = new Cow();
+        animal = new Cow("Mućka",5);
         animal.makeSound();
         //zdolność języka obiektowego do umieszczania we wspólnej zmiennej różnych typów obiektów
         //metody takiej zmiennej dostosowują swoje działanie w zależności jak dany obiekt ją nadpisał
@@ -59,3 +64,8 @@ public class AnimalsDemo {
 
     }
 }
+
+//private - tylko w danej klasie
+//default - pakiet
+//protected - w pakiecie + klasy dziedziczace w innych pakietach
+//public - dowolny pakiet
