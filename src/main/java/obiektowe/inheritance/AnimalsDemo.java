@@ -40,12 +40,22 @@ public class AnimalsDemo {
         animalGuide.feedAnimal(monkey);
         animalGuide.feedAnimal(whale);
 
+        //polimorfizm
+        System.out.println("------------Polymorphysm -------------");
+        Animal animal = new Whale();
+        animal.makeSound();
+        animal = new Monkey();
+        animal.makeSound();
+        animal = new Cow();
+        animal.makeSound();
+        //zdolność języka obiektowego do umieszczania we wspólnej zmiennej różnych typów obiektów
+        //metody takiej zmiennej dostosowują swoje działanie w zależności jak dany obiekt ją nadpisał
 
 
-
-
-
-
+        //Z abstrakcyjnej klasy nie można robić obiektów - nie działa new
+        //klasy abstrakcyjne mogą mieć abstrakcyjne metody
+//        animal = new Animal();
+//        animal.makeSound();
 
     }
 }
