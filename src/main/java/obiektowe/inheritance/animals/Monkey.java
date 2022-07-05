@@ -5,16 +5,19 @@ public class Monkey extends Animal{
     private int tailLength;
 
     public Monkey(String name, int age, int tailLength) {
-        this.name = name;
-        this.age = age;
+        super(name,age);
         this.tailLength = tailLength;
     }
     
     public Monkey(){
-        name = "Jacek";
-        age = 8;
+        super("Jacek",8);
         tailLength = 20;
     }
+
+    //konstruktory nie dziedzedzicza sie - sa synchronizowane
+    //konstruktory klas niżej w dziedziczeniu (Monkey) dopisują instrukcje "super()"
+    //wywołuje ona domyślny konstruktor z klasy wyżej
+    //jeśli takiego nie ma - kod się podkreśla - trzeba dodać parametry
 
     public void uhaha() {
         System.out.println("Uhahaha!!!");

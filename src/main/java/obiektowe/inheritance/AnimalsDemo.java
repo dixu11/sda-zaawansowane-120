@@ -69,3 +69,5 @@ public class AnimalsDemo {
 //default - pakiet
 //protected - w pakiecie + klasy dziedziczace w innych pakietach
 //public - dowolny pakiet
+
+

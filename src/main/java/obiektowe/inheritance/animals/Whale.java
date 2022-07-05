@@ -6,14 +6,12 @@ public class Whale extends Animal{
 
 
     public Whale(String name, int age, double weight) {
-        this.name = name;
-        this.age = age;
+        super(name,age);
         this.weight = weight;
     }
 
     public Whale() {
-        name = "Kraken";
-        age = 60;
+        super("Kraken",60);
         weight = 4.5;
     }
 
