@@ -14,6 +14,10 @@ public class AnimalsDemo {
         whale.booing();
         whale.swim();
 
+        //wspólna metoda:
+        monkey.eat();
+        whale.eat();
+
 
     }
 }

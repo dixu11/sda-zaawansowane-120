@@ -1,6 +1,6 @@
 package obiektowe.inheritance;
 
-public class Monkey {
+public class Monkey extends Animal{
     private String name;
     private int age;
     private int tailLength;
@@ -23,6 +23,11 @@ public class Monkey {
 
     public void jump(){
         System.out.println(name + " skacze w poszukiwaniu banana!");
+    }
+
+
+    public void eat(){
+        System.out.println("Małpa je banana!");
     }
     
     

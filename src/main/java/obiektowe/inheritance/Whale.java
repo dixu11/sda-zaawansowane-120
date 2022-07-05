@@ -1,6 +1,6 @@
 package obiektowe.inheritance;
 
-public class Whale {
+public class Whale extends Animal{
 
     private String name;
     private int age;
@@ -25,6 +25,12 @@ public class Whale {
 
     public void swim() {
         System.out.println(name + " płynie majestatycznie");
+    }
+
+
+    public void eat(){
+        super.eat();
+        System.out.println("Czyli je plankton");
     }
 
 
