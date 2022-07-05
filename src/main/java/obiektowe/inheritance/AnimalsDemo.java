@@ -34,8 +34,11 @@ public class AnimalsDemo {
 
         System.out.println("-------------Animal Guide -----------");
         AnimalGuide animalGuide = new AnimalGuide();
-        animalGuide.feedMonkey(monkey);
-        animalGuide.feedWhale(whale);
+       // animalGuide.feedMonkey(monkey);
+      //  animalGuide.feedWhale(whale);
+
+        animalGuide.feedAnimal(monkey);
+        animalGuide.feedAnimal(whale);
 
 
 
