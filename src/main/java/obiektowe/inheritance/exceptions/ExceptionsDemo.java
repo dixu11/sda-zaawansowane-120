@@ -7,9 +7,14 @@ public class ExceptionsDemo {
         try{
            String result= text.toUpperCase();
             System.out.println(result);
-        }catch (NullPointerException e ){
-            System.out.println("Wystąpił nullpointer!");
-        }finally {
+           // System.out.println(text.charAt(100));
+            System.out.println(10/0);
+        }catch (StringIndexOutOfBoundsException | NullPointerException e){
+            System.out.println("Oj oj, oj..");
+        } catch (Exception e){
+            System.out.println("Jakiś nieprzewidziany wyjątek!");
+            e.printStackTrace();
+        } finally {
             System.out.println("Zawsze wystąpi");
         }
 
