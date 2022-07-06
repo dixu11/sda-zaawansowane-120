@@ -11,8 +11,10 @@ public class ConstructorsDemo {
 class O{
 
     public O(int number){
+        super();
         System.out.println("Constructor O " + number);
     }
+
 
 }
 
