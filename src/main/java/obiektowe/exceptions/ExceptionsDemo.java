@@ -1,4 +1,4 @@
-package obiektowe.inheritance.exceptions;
+package obiektowe.exceptions;
 
 public class ExceptionsDemo {
     public static void main(String[] args) {

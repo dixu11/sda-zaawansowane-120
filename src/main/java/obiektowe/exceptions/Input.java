@@ -1,4 +1,4 @@
-package obiektowe.inheritance.exceptions;
+package obiektowe.exceptions;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
