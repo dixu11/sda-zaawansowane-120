@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class FileInput {
 
 
-    public List<Book> readBooks() throws Exception{
+    public List<Book> readBooks() throws BookMappingException{
         List<Book> booksList = new ArrayList<>();
         File file = new File("src\\main\\java\\obiektowe\\exceptions\\ksiazki.txt");
         try {
@@ -27,7 +27,7 @@ public class FileInput {
         return booksList;
     }
 
-    private Book mapLineToBook(String line) throws Exception{
+    private Book mapLineToBook(String line) throws BookMappingException{
         try {
             String[] elements = line.split(";");
             String title = elements[0];
@@ -35,7 +35,8 @@ public class FileInput {
             Book book = new Book(title, year);
             return book;
         } catch (Exception exception) {
-            throw new Exception("Niepoprawny format pliku!!!! dla linii: " + line);
+            //throw new Exception("Niepoprawny format pliku!!!! dla linii: " + line);
+            throw new BookMappingException("Niepoprawny format pliku!!!! dla linii: " + line, line);
         }
 
     }
@@ -45,9 +46,10 @@ public class FileInput {
         FileInput input = new FileInput();
         try{
             System.out.println(input.readBooks());
-        }catch (Exception e){
+        }catch (BookMappingException e){
             System.out.println("Wystąpił wyjątek:");
             System.out.println(e.getMessage());
+            System.out.println(e.getLine());
         }
     }
 
