@@ -1,10 +1,13 @@
 package obiektowe.inheritance;
 
 import obiektowe.inheritance.animals.Animal;
+import obiektowe.inheritance.interfaces.FarmAnimal;
+
+import java.util.List;
 
 public class AnimalGuide {
 
-    public void feedAnimal(Animal animal){
+    public void feedAnimal(FarmAnimal animal){
         System.out.println("Opiekun karmi zwierze:");
         animal.eat();
         animal.makeSound();

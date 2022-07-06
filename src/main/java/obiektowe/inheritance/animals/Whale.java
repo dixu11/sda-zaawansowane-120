@@ -1,6 +1,9 @@
 package obiektowe.inheritance.animals;
 
-public class Whale extends Animal{
+import obiektowe.inheritance.interfaces.WaterCreature;
+import obiektowe.inheritance.interfaces.WildAnimal;
+
+public class Whale extends Animal implements WildAnimal, WaterCreature {
 
     private double weight;
 
