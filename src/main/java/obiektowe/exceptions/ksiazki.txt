@@ -1,4 +1,4 @@
-Rusz głową! Java
-DDD. Kompedium wiedzy
-Wzorce Projektowe
-Praca z zastanym kodem
+Rusz głową! Java;2002
+DDD. Kompedium wiedzy;aa
+Wzorce Projektowe;sss
+Praca z zastanym kodem;2000
