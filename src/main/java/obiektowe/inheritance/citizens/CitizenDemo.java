@@ -7,6 +7,8 @@ public class CitizenDemo {
         Soldier soldier = new Soldier("Janina");
         Townsman townsman = new Townsman("Jarek");
 
+
+
         Town town = new Town();
         town.add(king);
         town.add(peasant);

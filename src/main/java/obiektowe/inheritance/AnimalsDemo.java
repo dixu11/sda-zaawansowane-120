@@ -18,6 +18,7 @@ public class AnimalsDemo {
 
         monkey.jump();
         monkey.uhaha();
+        monkey.makeSound();
 
         whale.booing();
         whale.swim();
@@ -35,6 +36,7 @@ public class AnimalsDemo {
 
         for (Animal animal : animals) {
             animal.eat();
+            animal.makeSound();
         }
 
         System.out.println("-------------Animal Guide -----------");
