@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class FileInput {
 
 
-    public List<Book> readBooks() {
+    public List<Book> readBooks() throws Exception{
         List<Book> booksList = new ArrayList<>();
         File file = new File("src\\main\\java\\obiektowe\\exceptions\\ksiazki.txt");
         try {
@@ -27,17 +27,15 @@ public class FileInput {
         return booksList;
     }
 
-    private Book mapLineToBook(String line) {
-        try{
-        String[] elements = line.split(";");
-        String title = elements[0];
-        int year = Integer.parseInt(elements[1]);
-        Book book = new Book(title, year);
+    private Book mapLineToBook(String line) throws Exception{
+        try {
+            String[] elements = line.split(";");
+            String title = elements[0];
+            int year = Integer.parseInt(elements[1]);
+            Book book = new Book(title, year);
             return book;
-        }catch (Exception exception){
-            System.out.println("Niepoprawny format pliku!!!!");
-            System.out.println("Dla linii: " + line);
-            return null;
+        } catch (Exception exception) {
+            throw new Exception("Niepoprawny format pliku!!!! dla linii: " + line);
         }
 
     }
@@ -45,7 +43,12 @@ public class FileInput {
 
     public static void main(String[] args) {
         FileInput input = new FileInput();
-        System.out.println(input.readBooks());
+        try{
+            System.out.println(input.readBooks());
+        }catch (Exception e){
+            System.out.println("Wystąpił wyjątek:");
+            System.out.println(e.getMessage());
+        }
     }
 
 }
