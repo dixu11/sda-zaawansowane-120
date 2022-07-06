@@ -17,7 +17,6 @@ public class ExceptionsDemo {
         } finally {
             System.out.println("Zawsze wystąpi");
         }
-
         System.out.println(".......");
 
     }
