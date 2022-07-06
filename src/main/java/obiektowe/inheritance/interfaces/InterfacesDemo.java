@@ -13,11 +13,6 @@ public class InterfacesDemo {
         list.add("aaa");
        // System.out.println(list.get(1));
         list.remove(1);
-
         System.out.println(list);
-
-
-
-
     }
 }
