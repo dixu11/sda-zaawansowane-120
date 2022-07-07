@@ -1,5 +1,8 @@
 package obiektowe.exceptions.task;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class FileConnection {
@@ -13,6 +16,21 @@ public class FileConnection {
             throw new FileConnectionException();
         }
         connected = true;
+    }
+
+    public List<String> getBooksFromFile() {
+        File file = new File("src\\main\\java\\obiektowe\\exceptions\\ksiazki.txt");
+        try {
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = bufferedReader.readLine();
+            System.out.println(line);
+        } catch (IOException e) {
+            System.out.println("Nie znaleziono pliku!");
+            return new ArrayList<>();
+        }
+
+        return null;
     }
 
     @Override
