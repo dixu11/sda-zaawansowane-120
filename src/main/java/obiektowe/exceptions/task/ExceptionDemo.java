@@ -10,9 +10,13 @@ public class ExceptionDemo {
             System.out.println("Błąd przy połączeniu");
         }catch (FileDbConnectionException e){
             System.out.println(e.getMessage());
+        }finally {
+            fileConnection.disconnect();
         }
         System.out.println(fileConnection);
     }
+
+
 
 /*
     Przygotuj klasę FileConnection, pozwalającą łączyć się z plikiem i pobierać z niego dane.

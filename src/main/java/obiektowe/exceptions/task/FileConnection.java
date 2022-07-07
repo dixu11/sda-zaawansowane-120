@@ -44,6 +44,10 @@ public class FileConnection {
         return lines;
     }
 
+    public void disconnect() {
+        connected = false;
+    }
+
     @Override
     public String toString() {
         return "FileConnection{" +
