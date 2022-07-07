@@ -43,7 +43,16 @@ public class MyArrayListDemo {
         // ([7])>([20])>([30])>([35])>null     ustawiamy że nowy element wskazuje na ten na indexie 1
         // ([10])>([7])>([20])>([30])>([35])>null   przestawiamy że 10 wskazuje na 7
 
+        //czyli dana ma informacje co jest przed nia i co za nia oraz jaki ma indeks?
 
+
+        MyContainer<Integer> intContainer = new MyContainer<>();
+        intContainer.setData(10);
+        System.out.println(intContainer.getData());
+
+        MyContainer<String> stringContainer = new MyContainer<>();
+        stringContainer.setData("abc");
+        System.out.println(stringContainer.getData());
 
 
 
