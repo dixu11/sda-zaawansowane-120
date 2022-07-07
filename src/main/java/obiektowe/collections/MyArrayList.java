@@ -1,9 +1,6 @@
 package obiektowe.collections;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class MyArrayList<E> implements List<E> {
 
@@ -17,7 +14,21 @@ public class MyArrayList<E> implements List<E> {
             return false;
         }
         elements[actualSize++] = e;
+        if (actualSize == elements.length) { //jeśli koniec miejsca - powiesz zbior
+            grow();
+        }
         return true;
+    }
+
+    private void grow() {  //dodaj 2x tyle miejsca
+       /* E[] newArray = (E[]) new Object[elements.length*2];
+       c for (int i = 0; i < elements.length; i++) {
+            newArray[i] = elements[i];
+        }
+          elements = newArray;
+        */
+
+        elements  =  Arrays.copyOf(elements,elements.length*2);
     }
 
 

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MyArrayListTest {
 
-   private List<Integer> elements = new ArrayList<>();
+   private List<Integer> elements = new MyArrayList<>();
 
     @Test
     public void addShouldHandleFewElements() {
