@@ -5,7 +5,7 @@ public class ExceptionDemo {
         FileConnection fileConnection = new FileConnection();
         try {
             fileConnection.connect();
-            fileConnection.getBooksFromFile();
+            System.out.println(fileConnection.getBooksFromFile());
         }catch (FileConnectionException e){
             System.out.println("Błąd przy połączeniu");
         }

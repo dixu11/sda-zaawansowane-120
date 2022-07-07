@@ -20,17 +20,20 @@ public class FileConnection {
 
     public List<String> getBooksFromFile() {
         File file = new File("src\\main\\java\\obiektowe\\exceptions\\ksiazki.txt");
+        List<String> lines = new ArrayList<>();
         try {
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
+
             String line = bufferedReader.readLine();
-            System.out.println(line);
+            while (line!=null){
+                lines.add(line);
+                line = bufferedReader.readLine();
+            }
         } catch (IOException e) {
             System.out.println("Nie znaleziono pliku!");
-            return new ArrayList<>();
         }
-
-        return null;
+        return lines;
     }
 
     @Override
