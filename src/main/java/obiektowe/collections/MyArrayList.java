@@ -59,7 +59,7 @@ public class MyArrayList<E> implements List<E> {
         // 6 , 3, 4, 4, 8
         // 6 , 3, 3, 4, 8
         // 6 , 9, 3, 4, 8
-        for (int i = actualSize-1; i >= 0; i--) {
+        for (int i = actualSize-1; i >= index; i--) {
             elements[i + 1] = elements[i];
         }
         elements[index] = element;

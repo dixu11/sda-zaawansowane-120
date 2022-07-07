@@ -1,6 +1,8 @@
 package obiektowe.collections;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,6 +53,29 @@ class MyArrayListTest {
         }
         fail();
     }
+
+    @Test
+    public void shouldMakeRoomForNewNumber() {
+        elements.add(6);
+        elements.add(3);
+        elements.add(4);
+        elements.add(8);
+
+        elements.add(1, 9);
+
+        assertEquals(5, elements.size());
+        assertEquals(9,elements.get(1));
+        assertEquals(3,elements.get(2));
+        assertEquals(4,elements.get(3));
+        assertEquals(8,elements.get(4));
+    }
+    // 6 , 3, 4, 8    = 4 actualSize
+    // 0   1  2  3
+
+    // 6 , 3, 4, 8, 8
+    // 6 , 3, 4, 4, 8
+    // 6 , 3, 3, 4, 8
+    // 6 , 9, 3, 4, 8
 
 
 }
