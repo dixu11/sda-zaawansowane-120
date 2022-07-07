@@ -8,6 +8,8 @@ public class ExceptionDemo {
             System.out.println(fileConnection.getBooksFromFile());
         }catch (FileConnectionException e){
             System.out.println("Błąd przy połączeniu");
+        }catch (FileDbConnectionException e){
+            System.out.println(e.getMessage());
         }
         System.out.println(fileConnection);
     }

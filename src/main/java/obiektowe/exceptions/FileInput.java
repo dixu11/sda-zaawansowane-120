@@ -1,5 +1,7 @@
 package obiektowe.exceptions;
 
+import obiektowe.exceptions.task.FileDbConnectionException;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

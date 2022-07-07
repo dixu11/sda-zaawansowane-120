@@ -18,20 +18,28 @@ public class FileConnection {
         connected = true;
     }
 
-    public List<String> getBooksFromFile() {
+    public List<String> getBooksFromFile()throws FileDbConnectionException {
         File file = new File("src\\main\\java\\obiektowe\\exceptions\\ksiazki.txt");
         List<String> lines = new ArrayList<>();
         try {
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            String line = bufferedReader.readLine();
-            while (line!=null){
+           /*  String line = bufferedReader.readLine();
+           while (line!=null){
                 lines.add(line);
                 line = bufferedReader.readLine();
+            }*/
+            String line;
+            while ( (line = bufferedReader.readLine()) != null ){
+                lines.add(line);
             }
+            if (lines.isEmpty()) {
+                throw new FileDbConnectionException("Plik jest pusty!");
+            }
+
         } catch (IOException e) {
-            System.out.println("Nie znaleziono pliku!");
+            throw new FileDbConnectionException("Nie znaleziono pliku!");
         }
         return lines;
     }
