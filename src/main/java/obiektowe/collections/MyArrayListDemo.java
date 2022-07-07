@@ -6,7 +6,16 @@ import java.util.List;
 
 public class MyArrayListDemo {
     public static void main(String[] args) {
-        List<Integer> list1 = new ArrayList<>();
+        List<Integer> list1 = new LinkedList<>();
+        list1.add(null);
+        list1.add(null);
+        list1.add(null);
+        System.out.println(list1);
+        System.out.println(list1.size());
+
+
+
+
         //[0][0][0]
         //add(10)
         //[10][0][0]

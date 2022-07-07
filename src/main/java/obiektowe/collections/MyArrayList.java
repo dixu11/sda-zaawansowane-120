@@ -7,14 +7,58 @@ import java.util.ListIterator;
 
 public class MyArrayList<E> implements List<E> {
 
-   private E[] elements = (E[]) new Object[10];
-
+    private E[] elements = (E[]) new Object[10];
+    private int actualSize = 0;
 
 
     @Override
-    public int size() {
-        return 0;
+    public boolean add(E e) {
+        if (e == null) { //na razie nie akceptujemy nulli
+            return false;
+        }
+        elements[actualSize++] = e;
+        return true;
     }
+
+
+
+   /* @Override
+    public boolean add(E e) {
+        if (e == null) { //na razie nie akceptujemy nulli
+            return false;
+        }
+
+        for(int i = 0 ; i <elements.length; i++){ //przegladam wszystkie
+            if (elements[i] == null) { // to z nullem oznacza wolne miejsce
+                elements[i] = e; // wstawiam
+                break;
+            }
+        }
+        actualSize++;
+        return true;
+    }*/
+
+
+    @Override
+    public void add(int index, E element) {
+
+    }
+
+   /* @Override
+    public int size() {
+        for (int i = 0; i < elements.length; i++) {
+            if (elements[i] == null) { // jestem przy ostatnim elemencie wiec i = size
+                return i;
+            }
+        }
+        return 0;
+    }*/
+
+    @Override
+    public int size() {
+        return actualSize;
+    }
+
 
     @Override
     public boolean isEmpty() {
@@ -39,11 +83,6 @@ public class MyArrayList<E> implements List<E> {
     @Override
     public <T> T[] toArray(T[] a) {
         return null;
-    }
-
-    @Override
-    public boolean add(E e) {
-        return false;
     }
 
     @Override
@@ -89,11 +128,6 @@ public class MyArrayList<E> implements List<E> {
     @Override
     public E set(int index, E element) {
         return null;
-    }
-
-    @Override
-    public void add(int index, E element) {
-
     }
 
     @Override
