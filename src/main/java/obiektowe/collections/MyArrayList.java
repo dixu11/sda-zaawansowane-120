@@ -28,8 +28,9 @@ public class MyArrayList<E> implements List<E> {
           elements = newArray;
         */
 
-        elements  =  Arrays.copyOf(elements,elements.length*2);
+        elements = Arrays.copyOf(elements, elements.length * 2);
     }
+
 
 
 
@@ -49,12 +50,30 @@ public class MyArrayList<E> implements List<E> {
         return true;
     }*/
 
-
     @Override
     public void add(int index, E element) {
+        // 6 , 3, 4, 8    = 4 actualSize
+        // 0   1  2  3
 
+        // 6 , 3, 4, 8, 8
+        // 6 , 3, 4, 4, 8
+        // 6 , 3, 3, 4, 8
+        // 6 , 9, 3, 4, 8
+        for (int i = actualSize-1; i >= 0; i--) {
+            elements[i + 1] = elements[i];
+        }
+        elements[index] = element;
+        actualSize++;
+        if (actualSize == elements.length) { //jeśli koniec miejsca - powiesz zbior
+            grow();
+        }
     }
 
+
+    @Override
+    public boolean remove(Object o) {
+        return false;
+    }
    /* @Override
     public int size() {
         for (int i = 0; i < elements.length; i++) {
@@ -73,11 +92,19 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return actualSize == 0;
     }
 
     @Override
     public boolean contains(Object o) {
+        for (E element : elements) {
+            if (element == null) {
+                break;
+            }
+            if (element.equals(o)) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -94,11 +121,6 @@ public class MyArrayList<E> implements List<E> {
     @Override
     public <T> T[] toArray(T[] a) {
         return null;
-    }
-
-    @Override
-    public boolean remove(Object o) {
-        return false;
     }
 
     @Override
@@ -133,7 +155,10 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public E get(int index) {
-        return null;
+        if (index < 0 || index >= actualSize) {
+            throw new IndexOutOfBoundsException();
+        }
+        return elements[index];
     }
 
     @Override

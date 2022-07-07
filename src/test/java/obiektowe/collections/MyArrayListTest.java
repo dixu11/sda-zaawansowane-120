@@ -1,10 +1,7 @@
 package obiektowe.collections;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class MyArrayListTest {
@@ -41,6 +38,18 @@ class MyArrayListTest {
     public void itsImpossibleToAddNullValue() {
         elements.add(null);
         assertEquals(0,elements.size());
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenOutOfBound() {
+        try {
+            elements.get(3);
+//            elements.get(13);
+        }catch (Exception e){
+            assertEquals(IndexOutOfBoundsException.class, e.getClass());
+            return;
+        }
+        fail();
     }
 
 
