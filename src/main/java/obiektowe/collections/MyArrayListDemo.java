@@ -54,6 +54,8 @@ public class MyArrayListDemo {
         stringContainer.setData("abc");
         System.out.println(stringContainer.getData());
 
+        List<Integer> myList = new MyArrayList<>();
+
 
 
     }
