@@ -13,11 +13,20 @@ public class MyLinkedList<E>implements List<E> {
     @Override
     public boolean add(E e) {
         MyNode<E> newNode = new MyNode<>(e); // tworzę "wagonik" którym będzie przechowywał nowy element
+        actualSize++;
         if (firstNode == null) {
             firstNode = newNode;
+            return true; //skonczylismy prace - koniec metody
         }
-        actualSize++;
-        return false;
+        //aktualny node = first node
+        MyNode<E> actualNode = firstNode;
+
+        while (actualNode.nextNode != null) { //czy masz następnego? Jak tak to...
+            actualNode = actualNode.nextNode; //ustawmy go na aktualny
+        }
+        //tu actualNode to ostatni node
+        actualNode.nextNode = newNode;
+        return true;
     }
 
     @Override
@@ -27,11 +36,22 @@ public class MyLinkedList<E>implements List<E> {
 
     @Override
     public E get(int index) {
-        switch (index){
+      /*  switch (index){
             case 0:
                 return firstNode.data;
+            case 1:
+                return firstNode.nextNode.data;
+        }*/
+        if(index<0 || index >=actualSize){
+            throw new IndexOutOfBoundsException();
         }
-        return null;
+
+        MyNode<E> actualNode = firstNode;
+
+        for (int i= 1; i<=index;i++) {
+            actualNode = actualNode.nextNode;
+        }
+        return actualNode.data;
     }
 
     @Override
@@ -70,6 +90,7 @@ public class MyLinkedList<E>implements List<E> {
     class MyNode<E>{
 
         private E data;
+        private MyNode<E> nextNode = null;
 
         public MyNode(E data) {
             this.data = data;

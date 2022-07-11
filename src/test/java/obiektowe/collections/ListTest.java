@@ -28,9 +28,11 @@ public abstract class ListTest {
     public void addShouldHandleFewElements() {
         elements.add(23);
         elements.add(11);
-        elements.add(13);
+       // elements.add(13);
 
-        assertEquals(3, elements.size());
+        assertEquals(2, elements.size());
+        assertEquals(23, elements.get(0));
+        assertEquals(11, elements.get(1));
     }
 
     @Test
@@ -48,6 +50,7 @@ public abstract class ListTest {
         elements.add(13);//11 elements
 
         assertEquals(11, elements.size());
+        assertEquals(13, elements.get(10));
     }
 
     @Test
