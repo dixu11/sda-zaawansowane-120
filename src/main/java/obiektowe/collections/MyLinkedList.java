@@ -42,16 +42,16 @@ public class MyLinkedList<E>implements List<E> {
             case 1:
                 return firstNode.nextNode.data;
         }*/
-        if(index<0 || index >=actualSize){
+        if(index<0 || index >=actualSize){  //czy zapytano i istniejacy index?
             throw new IndexOutOfBoundsException();
         }
 
-        MyNode<E> actualNode = firstNode;
+        MyNode<E> actualNode = firstNode; //aktualny node
 
-        for (int i= 1; i<=index;i++) {
+        for (int i= 1; i<=index;i++) { //przestawianie aktualnego aż na ten o danym indexie
             actualNode = actualNode.nextNode;
         }
-        return actualNode.data;
+        return actualNode.data; //wyciągnięcie danych
     }
 
     @Override

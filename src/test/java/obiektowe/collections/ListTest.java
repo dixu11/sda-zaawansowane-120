@@ -40,17 +40,17 @@ public abstract class ListTest {
         elements.add(23);
         elements.add(11);
         elements.add(13);
-        elements.add(13);
-        elements.add(13);
-        elements.add(13);
-        elements.add(13);
-        elements.add(13);
-        elements.add(13);
-        elements.add(13);
-        elements.add(13);//11 elements
+        elements.add(14);
+        elements.add(15);
+        elements.add(16);
+        elements.add(17);
+        elements.add(18);
+        elements.add(19);
+        elements.add(20);
+        elements.add(21);//11 elements
 
         assertEquals(11, elements.size());
-        assertEquals(13, elements.get(10));
+        assertEquals(21, elements.get(10));
     }
 
     @Test
@@ -107,6 +107,4 @@ public abstract class ListTest {
         assertTrue(shouldFind);
         assertFalse(shouldNotFind);
     }
-
-
 }
