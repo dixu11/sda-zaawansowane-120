@@ -15,6 +15,15 @@ public abstract class ListTest {
         this.elements = elements;
     }
 
+
+    @Test
+    public void addShouldHandleOneElement() {
+        elements.add(10);
+
+        assertEquals(1, elements.size());
+        assertEquals(10, elements.get(0));
+    }
+
     @Test
     public void addShouldHandleFewElements() {
         elements.add(23);

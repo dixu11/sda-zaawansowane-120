@@ -7,19 +7,30 @@ import java.util.ListIterator;
 
 public class MyLinkedList<E>implements List<E> {
 
+    private MyNode<E> firstNode = null;
+    private int actualSize = 0;
 
     @Override
     public boolean add(E e) {
+        MyNode<E> newNode = new MyNode<>(e); // tworzę "wagonik" którym będzie przechowywał nowy element
+        if (firstNode == null) {
+            firstNode = newNode;
+        }
+        actualSize++;
         return false;
     }
 
     @Override
     public int size() {
-        return 0;
+        return actualSize;
     }
 
     @Override
     public E get(int index) {
+        switch (index){
+            case 0:
+                return firstNode.data;
+        }
         return null;
     }
 
@@ -56,7 +67,14 @@ public class MyLinkedList<E>implements List<E> {
 
 
 
+    class MyNode<E>{
 
+        private E data;
+
+        public MyNode(E data) {
+            this.data = data;
+        }
+    }
 
 
 
