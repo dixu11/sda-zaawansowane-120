@@ -8,6 +8,8 @@ public class MyArrayList<E> implements List<E> {
     private int actualSize = 0;
 
 
+
+
     @Override
     public boolean add(E e) {
         if (e == null) { //na razie nie akceptujemy nulli
