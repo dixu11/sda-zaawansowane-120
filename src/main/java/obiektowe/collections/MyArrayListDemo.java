@@ -33,9 +33,10 @@ public class MyArrayListDemo {
         // {[7]} [10][20][30][35][0]
 
         List<Integer> list2 = new LinkedList<>();
-        //null
+        //null   (aktualny lancuch)
         //add(10)
-        //([10])>null
+        //([10]) (tworzy nowy element łańcucha)
+        //([10])>null (aktualny lancuch)
         //add(20)
         // ([20]) (tworzy nowy element łańcucha)
         //([10])>([20])>null (odnajduje ostatni element i ustawia mu, ten nowy jako jego następny)
@@ -45,7 +46,6 @@ public class MyArrayListDemo {
         //add(35)
         // ([35]) (tworzy nowy element łańcucha)
         //([10])>([20])>([30])>([35])>null
-
         // list1.add(1,7);
         //([10])>([20])>([30])>([35])>null  //Odnajdujemy odpowiednie miejsce (pozycja 1 czyli element z 20)
         //([7])>null tworzymy nowy element łańcucha

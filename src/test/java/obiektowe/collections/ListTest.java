@@ -72,7 +72,7 @@ public abstract class ListTest {
     }
 
     @Test
-    public void shouldMakeRoomForNewNumber() {
+    public void indexedAddShouldMakeRoomForNewNumber() {
         elements.add(6);
         elements.add(3);
         elements.add(4);

@@ -55,6 +55,26 @@ public class MyLinkedList<E>implements List<E> {
     }
 
     @Override
+    public void add(int index, E element) {
+        actualSize++;
+        MyNode<E> newNode = new MyNode<>(element); // nowy node
+
+        MyNode<E> actual = firstNode;  //reprezentuje node po nowym nodzie
+        MyNode<E> beforeActual = null; //reprezentuje node przed nowym nodem
+        for (int i = 1; i <= index; i++) { //znajduje odpowiednie nody
+            beforeActual = actual;
+            actual = actual.nextNode;
+        }
+        newNode.nextNode = actual; //nowy node wskazuje tego kto był na jego miejscu jako jego kolejny
+
+        if (beforeActual == null) { // dalej nie ma poprzedniego a więc - zmienił się pierwszy node!
+            firstNode = newNode;
+        }else{
+            beforeActual.nextNode = newNode; // jeśli był poprzedni to ma wskazywać na ten nowy
+        }
+    }
+
+    @Override
     public boolean remove(Object o) {
         return false;
     }
@@ -67,11 +87,6 @@ public class MyLinkedList<E>implements List<E> {
     @Override
     public boolean contains(Object o) {
         return false;
-    }
-
-    @Override
-    public void add(int index, E element) {
-
     }
     @Override
     public void clear() {
