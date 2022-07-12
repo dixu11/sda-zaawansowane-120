@@ -13,22 +13,42 @@ public class Controller {
         System.out.println("Witaj w programie do obsługi hotelu!");
         System.out.println("Co chcesz zrobić?");
 
-        //opcje
-        System.out.println("1. Pobierz listę wszystkich dostępnych pokoi");
+        do {
+            showMenu();
+            int input = readInput();
+            executeSelection(input);
+        } while (true);
 
-        //odpowiedź
+    }
+
+    private void showMenu() {
+        System.out.println("1. Pobierz listę wszystkich pokoi");
+        System.out.println("2. Pobierz listę wszystkich dostępnych pokoi");
+        System.out.println("3. Rezerwuj pokój (podaj nr pokoju i jeśli jest dostępny to go zarezerwuj)");
+        System.out.println("4. Zwolnij pokój (podaj nr pokoju i jeśli jest zajęty to go zwolnij)");
+        System.out.println("5. Zamknij program");
+    }
+
+    private int readInput() {
         Scanner scanner = new Scanner(System.in);
-        int input = scanner.nextInt();
+        return scanner.nextInt();
+    }
 
-        //wykonanie opcji
+    private void executeSelection(int input) {
         switch (input){
             case 1:
-                System.out.println("Wyświetlam dostępne pokoje:");
-               List<Room> rooms=  userService.getAllRooms();
+                System.out.println("Wyświetlam wszystkie pokoje:");
+                List<Room> rooms=  userService.getAllRooms();
                 for (Room room : rooms) {
                     System.out.println(room);
                 }
                 break;
+            case 2:
+                System.out.println("Wyślam dostępne pokoje:");
+                rooms=  userService.getNotOccupiedRooms();
+                for (Room room : rooms) {
+                    System.out.println(room);
+                }
             default:
                 System.out.println("Nie rozpoznano decyzji");
         }

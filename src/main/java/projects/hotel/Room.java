@@ -21,6 +21,10 @@ public class Room {
         withBathroom = random.nextBoolean();
     }
 
+    public boolean isOccupied() {
+        return occupied;
+    }
+
     @Override
     public String toString() {
         return "Room{" +

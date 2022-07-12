@@ -17,4 +17,14 @@ public class Hotel {
     public List<Room> getRooms() {
         return rooms;
     }
+
+    public List<Room> getNotOccupiedRooms() {
+        List<Room> result = new ArrayList<>();
+        for (Room room : rooms) {
+            if (!room.isOccupied()) {
+                result.add(room);
+            }
+        }
+        return result;
+    }
 }

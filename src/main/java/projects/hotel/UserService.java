@@ -11,5 +11,7 @@ public class UserService {
         return hotel.getRooms();
     }
 
-
+    public List<Room> getNotOccupiedRooms() {
+        return hotel.getNotOccupiedRooms();
+    }
 }
