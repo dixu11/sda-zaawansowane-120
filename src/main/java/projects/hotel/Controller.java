@@ -1,5 +1,6 @@
 package projects.hotel;
 
+import java.util.List;
 import java.util.Scanner;
 
 //interfejs aplikacji
@@ -8,9 +9,6 @@ public class Controller {
 
     private UserService userService = new UserService();
     public void startMenu() {
-
-
-
         //przywitanie
         System.out.println("Witaj w programie do obsługi hotelu!");
         System.out.println("Co chcesz zrobić?");
@@ -26,7 +24,10 @@ public class Controller {
         switch (input){
             case 1:
                 System.out.println("Wyświetlam dostępne pokoje:");
-
+               List<Room> rooms=  userService.getAllRooms();
+                for (Room room : rooms) {
+                    System.out.println(room);
+                }
                 break;
             default:
                 System.out.println("Nie rozpoznano decyzji");

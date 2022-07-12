@@ -3,11 +3,10 @@ package projects.hotel;
 public class Launcher {
 
     public static void main(String[] args) {
-        Room room1 = new Room();
-        Room room2 = new Room();
-        System.out.println(room1);
-        System.out.println(room2);
-
+//        Room room1 = new Room();
+//        Room room2 = new Room();
+//        System.out.println(room1);
+//        System.out.println(room2);
 
         Controller controller = new Controller();
         controller.startMenu();
