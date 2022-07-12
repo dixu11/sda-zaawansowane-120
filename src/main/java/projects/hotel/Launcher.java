@@ -8,8 +8,11 @@ public class Launcher {
 //        System.out.println(room1);
 //        System.out.println(room2);
 
-        Controller controller = new Controller();
-        controller.startMenu();
+//        Controller controller = new Controller();
+//        controller.startMenu();
+
+        ControllerGui controllerGui = new ControllerGui();
+        controllerGui.startMenu();
     }
 }
 
