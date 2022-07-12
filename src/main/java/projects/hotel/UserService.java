@@ -14,4 +14,13 @@ public class UserService {
     public List<Room> getNotOccupiedRooms() {
         return hotel.getNotOccupiedRooms();
     }
+
+    public void bookRoom(int selectedRoomNumber) throws UserServiceException {
+        //potrzebuję pokoju o tym numerze
+        Room room = hotel.findRoomByNumber(selectedRoomNumber);
+        if (room.isOccupied()) {
+            throw new UserServiceException("Ten pokój jest zajęty!");
+        }
+        room.book();
+    }
 }

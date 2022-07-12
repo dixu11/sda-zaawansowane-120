@@ -14,9 +14,13 @@ public class Controller {
         System.out.println("Co chcesz zrobić?");
 
         do {
-            showMenu();
-            int input = readInput();
-            executeSelection(input);
+            try {
+                showMenu();
+                int input = readInput();
+                executeSelection(input);
+            }catch (UserServiceException e){
+                System.out.println(e.getMessage());
+            }
         } while (true);
 
     }
@@ -34,7 +38,7 @@ public class Controller {
         return scanner.nextInt();
     }
 
-    private void executeSelection(int input) {
+    private void executeSelection(int input) throws UserServiceException {
         switch (input){
             case 1:
                 System.out.println("Wyświetlam wszystkie pokoje:");
@@ -44,19 +48,34 @@ public class Controller {
                 }
                 break;
             case 2:
-                System.out.println("Wyślam dostępne pokoje:");
-                rooms=  userService.getNotOccupiedRooms();
-                for (Room room : rooms) {
-                    System.out.println(room);
-                }
+                showNotOccupiedRooms();
+                break;
+            case 3:
+                System.out.println("Który pokój chciałbyś zarezerwować?");
+                showNotOccupiedRooms();
+                Scanner scanner = new Scanner(System.in);
+                int selectedRoomNumber = scanner.nextInt();
+                System.out.println("Wybrałeś: " + selectedRoomNumber);
+                userService.bookRoom(selectedRoomNumber);
+                System.out.println("Pokój poprawnie zarezerwowany");
+                break;
             default:
                 System.out.println("Nie rozpoznano decyzji");
         }
     }
 
+    private void showNotOccupiedRooms() {
+        List<Room> rooms;
+        System.out.println("Wyślam dostępne pokoje:");
+        rooms=  userService.getNotOccupiedRooms();
+        for (Room room : rooms) {
+            System.out.println(room);
+        }
+    }
+
 //    1. Pobierz listę wszystkich pokoi.
-//        2. Pobierz listę wszystkich dostępnych pokoi.
-//        3. Rezerwuj pokój (podaj nr pokoju i jeśli jest dostępny to go zarezerwuj).
-//            4. Zwolnij pokój (podaj nr pokoju i jeśli jest zajęty to go zwolnij).
+//    2. Pobierz listę wszystkich dostępnych pokoi.
+//    3. Rezerwuj pokój (podaj nr pokoju i jeśli jest dostępny to go zarezerwuj).
+//    4. Zwolnij pokój (podaj nr pokoju i jeśli jest zajęty to go zwolnij).
 
 }

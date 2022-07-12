@@ -25,6 +25,14 @@ public class Room {
         return occupied;
     }
 
+    public int getNr() {
+        return nr;
+    }
+
+    public void book() {
+        occupied = true;
+    }
+
     @Override
     public String toString() {
         return "Room{" +

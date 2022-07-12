@@ -27,4 +27,13 @@ public class Hotel {
         }
         return result;
     }
+
+    public Room findRoomByNumber(int selectedRoomNumber) throws UserServiceException{
+        for (Room room : rooms) {
+            if (room.getNr() == selectedRoomNumber) {
+                return room;
+            }
+        }
+        throw new UserServiceException("Nie znaleziono pokoju o nr " + selectedRoomNumber);
+    }
 }
