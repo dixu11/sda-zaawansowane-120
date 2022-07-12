@@ -11,8 +11,13 @@ public class Launcher {
 //        Controller controller = new Controller();
 //        controller.startMenu();
 
-        ControllerGui controllerGui = new ControllerGui();
-        controllerGui.startMenu();
+//        ControllerGui controllerGui = new ControllerGui();
+//        controllerGui.startMenu();
+
+
+        Controller controller = new ControllerGui();
+        controller.startMenu();
+
     }
 }
 
