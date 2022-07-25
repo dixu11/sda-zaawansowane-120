@@ -10,8 +10,24 @@ public class Cow extends Animal implements LandCreature, FarmAnimal {
         super(name, age);
     }
 
+
+
     @Override
     public void makeSound() {
         System.out.println("Muuuuu!");
+    }
+
+
+
+
+
+
+
+    @Override
+    public String toString() {
+        return "Cow{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
