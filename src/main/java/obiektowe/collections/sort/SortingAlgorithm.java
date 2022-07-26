@@ -1,21 +1,19 @@
 package obiektowe.collections.sort;
 
-import obiektowe.inheritance.animals.Cow;
-
 import java.util.LinkedList;
 import java.util.List;
 
 public class SortingAlgorithm {
 
 
-    public void sort(List<Cow> cows) {
-        for (int j = 0; j < cows.size(); j++) {
-            for (int i = 0; i < cows.size() - 1 - j; i++) {
-                int first = cows.get(i);
-                int second = cows.get(i+1);
+    public void sort(List<Integer> numbers) {
+        for (int j = 0; j < numbers.size(); j++) {
+            for (int i = 0; i < numbers.size() - 1 - j; i++) {
+                int first = numbers.get(i);
+                int second = numbers.get(i+1);
                 if (first > second) {  //aby zmienić kolejność wystarczy zmienić znak
-                    cows.set(i, second);
-                    cows.set(i + 1, first);
+                    numbers.set(i, second);
+                    numbers.set(i + 1, first);
                 }
             }
         }
