@@ -11,7 +11,7 @@ public class CowSortingAlgorithm {
             for (int i = 0; i < numbers.size() - 1 - j; i++) {
                 Cow first = numbers.get(i);
                 Cow second = numbers.get(i + 1);
-                if (   compare2(first,second) > 0 ) {  //aby zmienić kolejność wystarczy zmienić znak
+                if (   cowComparator.compareCows(first,second) > 0 ) {  //aby zmienić kolejność wystarczy zmienić znak
                     numbers.set(i, second);
                     numbers.set(i + 1, first);
                 }
@@ -58,7 +58,13 @@ class SortingCowsDemo {
                 new Cow("Ruda", 4)
         ));
         System.out.println(cows);
-        cowSortingAlgorithm.sort(cows);
+        cowSortingAlgorithm.sort(cows, new CowComparator(){
+            @Override
+            public int compareCows(Cow cow1, Cow cow2) {
+                return -cow1.getName().compareTo(cow2.getName());
+            }
+        });
+
         System.out.println(cows);
     }
 }
