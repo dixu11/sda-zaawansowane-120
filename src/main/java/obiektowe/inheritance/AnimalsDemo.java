@@ -59,6 +59,9 @@ public class AnimalsDemo {
         //zdolność języka obiektowego do umieszczania we wspólnej zmiennej różnych typów obiektów
         //metody takiej zmiennej dostosowują swoje działanie w zależności jak dany obiekt ją nadpisał
 
+        if (animal.getClass().equals(whale)) {//porównanie po klasie
+        }
+
 
         //Z abstrakcyjnej klasy nie można robić obiektów - nie działa new
         //klasy abstrakcyjne mogą mieć abstrakcyjne metody
