@@ -41,11 +41,23 @@ public class Streams {
         System.out.println(posrtowane);
 
 
-        products.stream()
+        int sum = products.stream()
                 .filter(product -> product.getPrice() < 10)
-                .map(product -> product.getAmount())
+                .mapToInt(product -> product.getAmount())
                 .filter(amount -> amount < 10)
-                .forEach(amount -> System.out.println(amount));
+                .sum();
+        System.out.println(sum);
+
+       Product prod= products.stream()
+                .sorted((prod1,prod2) -> prod2.getAmount()- prod1.getAmount())
+                        .findFirst()
+                                .get();
+
+        System.out.println(prod);
+
+
+                //.forEach(amount -> System.out.println(amount))
+
 
 
         System.exit(0);
