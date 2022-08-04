@@ -82,3 +82,10 @@ public class CounterTask implements Runnable{
         System.out.println(counterTask.getCounter()); // jaki wynik?
     }
 }
+
+//dla zaawansowanych:
+//wait / notify
+//lock
+//deadlock
+//thread pool
+//feature
