@@ -23,7 +23,6 @@ public class CounterApp {
         panel.add(numberField);
 
         frame.add(panel);
-        frame.pack();
 
         ActionListener action = new ActionListener() {
             @Override
@@ -37,9 +36,13 @@ public class CounterApp {
         button.addActionListener(action);
 
 
+        JButton lambdaButton = new JButton("Lambda przycisk");
+        panel.add(lambdaButton);
+
+        frame.pack();
 
 
-
+        lambdaButton.addActionListener((e) -> System.out.println("Hello!"));
 
     }
 }
