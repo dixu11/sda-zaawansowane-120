@@ -1,4 +1,3 @@
-- wielowątkowość
 - programowanie funkcyjne
 - input output
 - refleksja
