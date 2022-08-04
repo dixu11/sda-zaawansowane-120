@@ -25,6 +25,7 @@ public class Streams {
         products.add(product4);
         products.add(product5);
 
+
         //Wyświetl produkty które kosztują mniej niż 5 zł
         List<Product> odfiltrowane = products.stream()
                 .filter(product -> product.getPrice() < 5)
@@ -54,6 +55,13 @@ public class Streams {
                                 .get();
 
         System.out.println(prod);
+
+        System.out.println("-------------------------");
+
+        products.stream()
+                .sorted()
+                        .forEach(product -> System.out.println(product));
+        System.exit(0);
 
 
                 //.forEach(amount -> System.out.println(amount))
@@ -93,7 +101,7 @@ class MyInt {
     int number;
 }
 
-class Product {
+class Product implements Comparable<Product>{
 
     private String name;
     private double price;
@@ -124,5 +132,10 @@ class Product {
                 ", price=" + price +
                 ", amount=" + amount +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return name.compareTo(o.name);
     }
 }
