@@ -1,10 +1,13 @@
 package obiektowe.functionalProgramming;
 
+
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
 
 public class Functions {
     public static void main(String[] args) {
@@ -78,6 +81,7 @@ public class Functions {
         }
 
         names.forEach(name -> System.out.println("Cześć " + name) );
+
     }
 
 
@@ -92,3 +96,13 @@ interface Equation{
 interface TextManipulator{
     String change(String text);
 }
+
+//Consumer :   (T) -> void
+//Supplier :    () -> T
+//Function :   (T) -> R
+    //Operator :  (T) -> T
+//Predicate: (T) -> boolean
+//Runnable: () -> void
+//Comparator: (T,T) -> int
+//ActionListener: (ActionEvent) -> void
+
