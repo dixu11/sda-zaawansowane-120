@@ -7,7 +7,7 @@ public abstract class Person {
     private int id;
     private String name;
     private int cash;
-    private LocalDate birthDate;
+     LocalDate birthDate;
 
     private static int nextId;
 
