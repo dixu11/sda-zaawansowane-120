@@ -1,12 +1,7 @@
 package obiektowe.functionalProgramming;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Streams {
@@ -61,20 +56,10 @@ public class Streams {
         products.stream()
                 .sorted()
                         .forEach(product -> System.out.println(product));
-        System.exit(0);
-
-
-                //.forEach(amount -> System.out.println(amount))
-
-
-
-        System.exit(0);
-
         products.forEach(product -> System.out.println(product));
 
 
         //zliczyć łączną ilość produktów
-
         // int counter = 0;
         final MyInt myInt = new MyInt();
         myInt.number = 0;
@@ -83,17 +68,13 @@ public class Streams {
 
     }
 
-
-
-
-  /*  private static Consumer<Product> prepareLambda(){
+      /*  private static Consumer<Product> prepareLambda(){
         int counter = 0;
         Consumer<Product> myLambda= product->{
             counter += product.getAmount();
         };
         return myLambda;
     }*/
-
 
 }
 
