@@ -10,10 +10,10 @@ public interface StreamService {
     void sortAndPrint(List<String> names);
 
     //odsiewa powtarzające się wartości i zwraca sumę pozostałych
-    int distinctAndCountNumbers(int[] numbers);
+    int distinctAndSumNumbers(int[] numbers);
 
     // odfiltrowuje wszystkie imiona męskie i zbiera pozostałe do listy
-    List<String> computeMaleNames(List<String> names);
+    List<String> computeFemaleNames(List<String> names);
 
     //wyświetla tylko liczby z określonego zakresu
     void printNumbersOfRange(int[] numbers, int minValue, int maxValue);

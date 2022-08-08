@@ -20,8 +20,19 @@ public class PersonDemo {
         //miejsce na Twoje testy zaimplementowanych metod. Jeśli umiesz możesz wykonać testy jednostkowe udowadniające
         //poprawne działanie zaimplementowanych metod
         streamService.sortAndPrint(names);
+        int sum = streamService.distinctAndSumNumbers(primeNumbers);
+        System.out.println(sum);
+        List<String> namesFiltered = streamService.computeFemaleNames(names);
+        System.out.println(namesFiltered);
+        streamService.printNumbersOfRange(primeNumbers,7,14);
+        List<Integer> namesLength = streamService.computeNamesLength(names);
+        System.out.println(namesLength);
 
-        //List<Person> people = streamService.buildPeopleWithNames(names);
+        /*List<Person> people2 = new ArrayList<>();
+        Person person = new MyPerson();
+        people2.add(person);*/
+
+        List<Person> people = streamService.buildPeopleWithNames(names);
         //od tego momentu wykorzystuj również zbiór people do testu metod wykorzystujących argument List<Person>
 
     }

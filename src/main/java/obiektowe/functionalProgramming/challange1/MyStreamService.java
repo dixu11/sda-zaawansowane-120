@@ -1,32 +1,44 @@
 package obiektowe.functionalProgramming.challange1;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MyStreamService implements StreamService {
 
     @Override
     public void sortAndPrint(List<String> names) {
-
+        names.stream()
+                .sorted()
+                .forEach( name -> System.out.println(name));
     }
 
     @Override
-    public int distinctAndCountNumbers(int[] numbers) {
-        return 0;
+    public int distinctAndSumNumbers(int[] numbers) {
+        return Arrays.stream(numbers)
+                .distinct()
+                .sum();
     }
 
     @Override
-    public List<String> computeMaleNames(List<String> names) {
-        return null;
+    public List<String> computeFemaleNames(List<String> names) {
+        return names.stream()
+                .filter(name -> name.endsWith("a"))
+                .collect(Collectors.toList());
     }
 
     @Override
     public void printNumbersOfRange(int[] numbers, int minValue, int maxValue) {
-
+        Arrays.stream(numbers)
+                .filter(number -> number >= minValue && number <= maxValue)
+                .forEach(number -> System.out.println(number));
     }
 
     @Override
     public List<Integer> computeNamesLength(List<String> names) {
-        return null;
+        return names.stream()
+                .map(name -> name.length())
+                .toList();
     }
 
     @Override
