@@ -2,12 +2,11 @@ package obiektowe.functionalProgramming.challange1;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 import java.util.Random;
 
 public class PersonImpl extends Person {
 
-   private Random random = new Random();
+   private static Random random = new Random();
 
     public PersonImpl(String name) {
         super(name);

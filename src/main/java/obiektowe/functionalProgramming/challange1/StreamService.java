@@ -27,8 +27,8 @@ public interface StreamService {
     //Stwórz klasę MyPerson dziedziczącą po Person, zaimplementuj i przetestuj abstrakcyjne
     // metody klasy Person, będą potrzebne później
 
-    //każdego imienia z listy tworzy tworzy osobę i zwraca listę tych osób, wykorzystaj własną impl klasy Person
-    List<Person> buildPeopleWithNames(List<String> names);
+    //dla każdego imienia z listy tworzy tworzy osobę i zwraca listę tych osób, wykorzystaj własną impl klasy Person
+    List< Person> buildPeopleWithNames(List<String> names);
 
     //zwraca osoby o ID powyżej zadanej wartości
     List<Person> findPeopleOfIdGreaterThan(List<Person> people,int id);

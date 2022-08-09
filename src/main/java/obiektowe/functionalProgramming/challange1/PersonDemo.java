@@ -32,7 +32,13 @@ public class PersonDemo {
         Person person = new MyPerson();
         people2.add(person);*/
 
+        Person person = new PersonImpl("Michał");
+        System.out.println(person);
+        System.out.println(person.getAge());
+
         List<Person> people = streamService.buildPeopleWithNames(names);
+        System.out.println(people);
+
 
         //od tego momentu wykorzystuj również zbiór people do testu metod wykorzystujących argument List<Person>
 

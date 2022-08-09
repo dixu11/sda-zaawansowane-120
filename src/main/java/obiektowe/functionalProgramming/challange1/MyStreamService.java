@@ -42,9 +42,14 @@ public class MyStreamService implements StreamService {
     }
 
     @Override
+    //List<? extends Person>
     public List<Person> buildPeopleWithNames(List<String> names) {
-        return null;
+        return  names.stream()
+                .map(name -> (Person)new PersonImpl(name))
+                .toList();
     }
+    // List<Person>
+    // Stream<PersonImpl> -> to nie wejdzie w <Person> chyba że użyjemy <Person> lub, zmienimy wymóg na List<? exstends Person>
 
     @Override
     public List<Person> findPeopleOfIdGreaterThan(List<Person> people, int id) {
