@@ -53,12 +53,34 @@ public class MyStreamService implements StreamService {
 
     @Override
     public List<Person> findPeopleOfIdGreaterThan(List<Person> people, int id) {
-        return null;
+        return people.stream()
+                .filter( person-> person.getId()>id)
+                .toList();
     }
 
     @Override
     public boolean hasSenior(List<Person> people) {
-        return false;
+        return people.stream()
+                .filter(person -> person.getAge()<60)
+                .count() > 0;
+    }
+
+
+    public boolean hasSenior2(List<Person> people) {
+        List<Person> seniors = people.stream()
+                .filter(person -> person.getAge()<60)
+                 .toList();
+      /*  if (!seniors.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }*/
+        return !seniors.isEmpty();
+    }
+
+    public boolean hasSenior3(List<Person> people) {
+       return people.stream()
+                .anyMatch(person -> person.getAge() > 60);
     }
 
     @Override

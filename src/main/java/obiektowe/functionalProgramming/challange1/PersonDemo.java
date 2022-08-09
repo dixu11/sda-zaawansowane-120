@@ -38,7 +38,9 @@ public class PersonDemo {
 
         List<Person> people = streamService.buildPeopleWithNames(names);
         System.out.println(people);
-
+        System.out.println(streamService.findPeopleOfIdGreaterThan(people,3));
+        System.out.println();
+        System.out.println(streamService.hasSenior(people));
 
         //od tego momentu wykorzystuj również zbiór people do testu metod wykorzystujących argument List<Person>
 

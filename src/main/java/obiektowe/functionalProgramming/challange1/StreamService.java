@@ -33,7 +33,7 @@ public interface StreamService {
     //zwraca osoby o ID powyżej zadanej wartości
     List<Person> findPeopleOfIdGreaterThan(List<Person> people,int id);
 
-    //sprawdza czy wśród tych osób jest powyżej 60 roku życia
+    //sprawdza czy wśród tych osób jest ktoś powyżej 60 roku życia
     boolean hasSenior(List<Person> people);
 
     //sumuje łączną gotówkę wszystkich osób
