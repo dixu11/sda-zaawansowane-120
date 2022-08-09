@@ -35,15 +35,22 @@ public class PersonDemo {
         Person person = new PersonImpl("Michał");
         System.out.println(person);
         System.out.println(person.getAge());
-
+        System.out.println();
         List<Person> people = streamService.buildPeopleWithNames(names);
         System.out.println(people);
+        System.out.println();
         System.out.println(streamService.findPeopleOfIdGreaterThan(people,3));
         System.out.println();
         System.out.println(streamService.hasSenior(people));
-
+        System.out.println();
+        System.out.println(streamService.sumTotalCash(people));
+        System.out.println();
+//        people.clear();//nie działa bo toList dało nam Immutable listę - niezmienialną
+      //  people = new ArrayList<>();
+        System.out.println(streamService.findRichestPerson(people));
         //od tego momentu wykorzystuj również zbiór people do testu metod wykorzystujących argument List<Person>
-
+        System.out.println();
+        System.out.println(streamService.computeAverageAge(people));
     }
 
 }

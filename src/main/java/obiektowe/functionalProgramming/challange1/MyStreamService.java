@@ -85,16 +85,25 @@ public class MyStreamService implements StreamService {
 
     @Override
     public double sumTotalCash(List<Person> people) {
-        return 0;
+       return people.stream()
+                .mapToDouble(Person::getCash)
+                .sum();
     }
 
     @Override
     public Person findRichestPerson(List<Person> people) {
-        return null;
+        return people.stream()
+                .sorted((p1,p2)-> Double.compare(p2.getCash(),p1.getCash()))
+                .findFirst()
+                .orElse(null);
     }
 
+    //jeśli pusta lista to -1
     @Override
     public double computeAverageAge(List<Person> people) {
-        return 0;
+        return people.stream()
+                .mapToInt(person -> person.getAge())
+                .average()
+                .orElse(-1);
     }
 }
