@@ -12,7 +12,13 @@ public class Game {
         this.gameDevelopers = gameDevelopers;
     }
 
+    public String getTitle() {
+        return title;
+    }
 
+    public List<GameDeveloper> getGameDevelopers() {
+        return gameDevelopers;
+    }
 
     @Override
     public String toString() {

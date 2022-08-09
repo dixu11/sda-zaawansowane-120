@@ -2,6 +2,7 @@ package obiektowe.functionalProgramming.optionalDemo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class GameCatalog {
     private List<Game> games;
@@ -21,6 +22,18 @@ public class GameCatalog {
     }
 
 
+    public Optional<Game> findGameByTitle(String title) {
+        for (Game game : games) {
+            if (game.getTitle().equalsIgnoreCase(title)) {
+                return Optional.of(game); // Optional będzie zawierał grę
+            }
+        }
+        return Optional.empty(); // Optional będzie pusty
+    }
+    //return Optional.ofNullable(mojaZmienna); // jeśli mam zmienną w której może jest może nie
+
+    //znajdź project Managera wybranej gry
+
     //Znajdź wszystki pracowników określonej rangi
     //Kto pracuje w największej ilości projektów?
     //Ile osób najwięcej pracuje nad projektem?
@@ -28,7 +41,6 @@ public class GameCatalog {
     //Policz ilość pracowników dla danej rangi
     //ile łącznie osób przedzielono do pracy nad grami (z powtórkami)
     //zwróć wszystkie gry, nad którymi pracuje zespół zawierający minimum jednego seniora
-    //znajdź project Managera wybranej gry
 
 
     @Override
