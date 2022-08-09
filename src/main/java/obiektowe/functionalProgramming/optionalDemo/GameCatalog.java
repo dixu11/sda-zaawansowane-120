@@ -15,8 +15,8 @@ public class GameCatalog {
         GameDeveloper gameDeveloper4 = new GameDeveloper("Wojtek","Junior");
         GameDeveloper gameDeveloper5 = new GameDeveloper("Ala","Senior");
         Game game = new Game("Doom",List.of(gameDeveloper,gameDeveloper2));
-        Game game2 = new Game("Diablo",List.of(gameDeveloper3));
-        Game game3 = new Game("HoMM",List.of(gameDeveloper, gameDeveloper5));
+        Game game2 = new Game("Diablo",List.of(gameDeveloper3,gameDeveloper2,gameDeveloper5));
+        Game game3 = new Game("HoMM",List.of(gameDeveloper));
         Game game4 = new Game("Skyrim", List.of(gameDeveloper, gameDeveloper2, gameDeveloper3, gameDeveloper4, gameDeveloper5));
         games.addAll(List.of(game, game2, game3, game4));
     }
@@ -30,16 +30,25 @@ public class GameCatalog {
         }
         return Optional.empty(); // Optional będzie pusty
     }
-    //return Optional.ofNullable(mojaZmienna); // jeśli mam zmienną w której może jest może nie
+    //return Optional.ofNullable(mojaZmienna); // jeśli mam zmienną w której może jest może ni
 
     //znajdź project Managera wybranej gry
+
+
+    //ile łącznie osób przedzielono do pracy nad grami (z powtórkami)
+    //ile etatów zapewniają wszystkie gry razem
+    public int howManyJobs(){
+           return(int) games.stream()
+                    .flatMap(game -> game.getGameDevelopers().stream())
+                    .count();
+    }
+
 
     //Znajdź wszystki pracowników określonej rangi
     //Kto pracuje w największej ilości projektów?
     //Ile osób najwięcej pracuje nad projektem?
     //Daj wszystki pracowników, bez powtórek
     //Policz ilość pracowników dla danej rangi
-    //ile łącznie osób przedzielono do pracy nad grami (z powtórkami)
     //zwróć wszystkie gry, nad którymi pracuje zespół zawierający minimum jednego seniora
 
 

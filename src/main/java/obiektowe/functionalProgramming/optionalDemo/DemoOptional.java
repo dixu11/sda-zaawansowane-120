@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Demo {
+public class DemoOptional {
     public static void main(String[] args) {
         GameCatalog gameCatalog = new GameCatalog();
         System.out.println(gameCatalog);
