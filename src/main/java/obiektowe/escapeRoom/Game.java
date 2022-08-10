@@ -11,9 +11,9 @@ public class Game {
        return room.getItems();
     }
 
-    public void useItem(int itemIndex) {
+    public String useItem(int itemIndex) {
         Item item = room.findItemByIndex(itemIndex);
-        item.use();
+       return item.use();
     }
 
     public int howManyItems() {

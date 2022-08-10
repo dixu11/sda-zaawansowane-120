@@ -12,9 +12,11 @@ public class Controller {
 
 
     public void start() {
-        printMenu();
-       int selection = selectOption();
-        useSelectedItem(selection);
+        do {
+            printMenu();
+            int selection = selectOption();
+            useSelectedItem(selection);
+        } while (true);//todo
     }
 
     private void printMenu() {
@@ -23,7 +25,7 @@ public class Controller {
         List<Item> items = game.getItems();
         for (int i = 0; i < items.size(); i++) {
             // System.out.println(i+1 + ". " + items.get(i).getName());
-            System.out.printf("%d. %s\n", i+1, items.get(i).getName());
+            System.out.printf("%d. %s\n", i + 1, items.get(i).getName());
         }
     }
 
@@ -37,9 +39,10 @@ public class Controller {
         return selection;
     }
 
-    private void useSelectedItem(int itemNumber){
-        System.out.println("Używasz przedmiotu nr " + itemNumber);
-        game.useItem(itemNumber - 1);
+    private void useSelectedItem(int itemNumber) {
+        String actionResult = game.useItem(itemNumber - 1);
+        System.out.println(actionResult);
+
     }
 
 }

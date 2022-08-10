@@ -6,7 +6,7 @@ public class Door extends Item{
     }
 
     @Override
-    public void use() {
-        System.out.println("Używam drzwi");
+    public String use() {
+        return"Używam drzwi";
     }
 }
