@@ -35,6 +35,13 @@ public class Main {
         System.out.println(shop.getCustomerNames());
         System.out.println(shop.getAverageAge());
         System.out.println(shop.findCustomersWithOrders());
+        System.out.println(shop.findMatureCustomersSortedByAge());
         System.out.println(shop.getNewOrders());
+        System.out.println(shop.findAverageProductAmountOfAllOrders());
+        System.out.println(shop.findAverageFullProductPriceOfAllOrders());
+        System.out.println(shop.findTheMostSpendingCustomer());
+        System.out.println(shop.findProductWithLeastQuantity());
+        System.out.println(shop.findLateProducts());
+
     }
 }

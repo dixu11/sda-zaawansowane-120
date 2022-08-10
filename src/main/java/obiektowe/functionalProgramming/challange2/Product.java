@@ -20,6 +20,19 @@ public class Product {
         this.country = country;
     }
 
+
+    public double getFullPrice() {
+        return amount * price;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
     @Override
     public String toString() {
         return "Product{" +

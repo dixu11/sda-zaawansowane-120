@@ -13,6 +13,10 @@ public class Order {
         orderTime = getRandomTime();
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
     private LocalDateTime getRandomTime() {
         return LocalDateTime.now().minusDays(new Random().nextInt(14));
     }

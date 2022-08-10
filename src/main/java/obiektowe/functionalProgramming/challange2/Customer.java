@@ -15,27 +15,26 @@ public class Customer {
     }
 
 
-    public int getAge() {
-        return birthday.until(LocalDate.now()).getYears();
+    public double howMuchSpent(){
+        return orders.stream()
+                .flatMap(order -> order.getProducts().stream())
+                .mapToDouble(product -> product.getFullPrice())
+                .sum();
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "orders=" + orders +
-                ", name='" + name + '\'' +
-                ", birthday=" + birthday +
-                '}';
+
+    public int getAge() {
+        return birthday.until(LocalDate.now()).getYears();
     }
 
 
     public boolean hasOrders() {
         return !orders.isEmpty();
     }
+
     public List<Order> getOrders() {
         return orders;
     }
-
     public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
@@ -55,5 +54,14 @@ public class Customer {
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "orders=" + orders +
+                ", name='" + name + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }
