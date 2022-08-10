@@ -6,6 +6,7 @@ import java.util.List;
 public class Game {
 
     private Room room = new Room();
+    private final Player player = new Player();
 
     public List<Item> getItems() {
        return room.getItems();
@@ -13,7 +14,7 @@ public class Game {
 
     public String useItem(int itemIndex) {
         Item item = room.findItemByIndex(itemIndex);
-       return item.use();
+       return item.use(room, player);
     }
 
     public int howManyItems() {

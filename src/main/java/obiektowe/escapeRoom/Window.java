@@ -9,13 +9,24 @@ public class Window extends Item{
     }
 
     @Override
-    public String use() {
-        if(open){
-            open = false;
-           return "Zamykasz okno";
-        }else {
-            open = true;
-            return "Otwierasz okno";
-        }
+    public String use(Room room, Player player) { //todo, czy da się stąd wywalić?
+        open = !open;
+        return open ? "Otwierasz okno" : "Zamykasz okno";
     }
 }
+
+
+
+
+
+//       int liczba = 10;
+//        liczba = -liczba;
+
+
+// if(open){
+//        open = false;
+//        return "Zamykasz okno";
+//        }else {
+//        open = true;
+//        return "Otwierasz okno";
+//        }

@@ -1,7 +1,5 @@
 package obiektowe.escapeRoom;
 
-import java.util.stream.Stream;
-
 public abstract class Item {
     private String name;
 
@@ -13,5 +11,5 @@ public abstract class Item {
         return name;
     }
 
-    public abstract String use();
+    public abstract String use(Room room, Player player);
 }

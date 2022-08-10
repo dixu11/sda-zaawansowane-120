@@ -42,7 +42,6 @@ public class Controller {
     private void useSelectedItem(int itemNumber) {
         String actionResult = game.useItem(itemNumber - 1);
         System.out.println(actionResult);
-
     }
 
 }
