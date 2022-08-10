@@ -1,3 +1,2 @@
-- programowanie funkcyjne
-- input output
+- input output  // serializacja + json
 - refleksja
