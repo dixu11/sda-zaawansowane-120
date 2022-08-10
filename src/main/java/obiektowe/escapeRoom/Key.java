@@ -6,4 +6,8 @@ public class Key extends Item{
         super("Klucz");
     }
 
+    @Override
+    public void use() {
+        System.out.println("Używam klucza");
+    }
 }
