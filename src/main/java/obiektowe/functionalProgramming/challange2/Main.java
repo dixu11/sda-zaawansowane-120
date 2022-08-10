@@ -34,6 +34,7 @@ public class Main {
 
         System.out.println(shop.getCustomerNames());
         System.out.println(shop.getAverageAge());
+        System.out.println(shop.findCustomersWithOrders());
         System.out.println(shop.getNewOrders());
     }
 }

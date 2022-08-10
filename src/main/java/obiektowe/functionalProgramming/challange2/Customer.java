@@ -28,6 +28,10 @@ public class Customer {
                 '}';
     }
 
+
+    public boolean hasOrders() {
+        return !orders.isEmpty();
+    }
     public List<Order> getOrders() {
         return orders;
     }

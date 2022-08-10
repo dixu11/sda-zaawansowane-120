@@ -27,7 +27,15 @@ public class Shop {
 
     }
 
-//zwróć customerów którzy mają jakieś zamówienia
+    //zwróć customerów którzy mają jakieś zamówienia
+    public List<Customer> findCustomersWithOrders() {
+        return customers.stream()
+                .filter(customer -> customer.hasOrders())
+                .toList();
+    }
+
+
+
 //zwróć tylko pełnoletnich customerów posortowanych po ich wieku
 
     public List<Order> getNewOrders() {
@@ -35,7 +43,6 @@ public class Shop {
                 .flatMap(customer -> customer.getOrders().stream())
                 .filter(order -> order.getOrderTime().plusDays(7).isAfter(LocalDateTime.now()))
                 .toList();
-
     }
 
 
@@ -43,15 +50,6 @@ public class Shop {
 //zwróć średnią ilość produktów w zamówieniach
 //zwróć średnią cenę produktów ze wszystkich zamówień
     //zwróć customera, który wydał najwięcej
-
-   /* public Customer findCustomerThatSpendTheMost() {
-        return customers.stream();
-    }
-
-    public double howMuchSpent(Customer customer){
-        customer.getOrders().stream()
-                .flatMap(order-> order.get)
-    }*/
 
 
 
