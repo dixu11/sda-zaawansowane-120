@@ -3,7 +3,11 @@ package obiektowe.functionalProgramming.challange2;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Shop {
@@ -120,5 +124,20 @@ public double findAverageFullProductPriceOfAllOrders() {
 
 //trudne:
 //zwróć mapę której kluczem będzie numer miesiąca a wartością ilość customerów urodzonych w danym miesiącu
+    public Map<Integer,Integer> countCustomersBornInMonth(){
+      return IntStream.range(1,13)
+              .boxed()//wychodzi ze streama liczbowego do streama Objectów
+              .collect(Collectors.toMap(month -> month, month -> getCustomersBornIn(month).size()));
+
+    }
+
+    private List<Customer> getCustomersBornIn(int month) {
+        return customers.stream()
+                .filter(customer -> customer.getBirthday().getMonthValue() == month)
+                .toList();
+    }
+
+
 //zwróć mapę zawierającą kraj oraz ilość produktów pochodzących z tego kraju
+
 }

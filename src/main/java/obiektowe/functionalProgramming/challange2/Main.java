@@ -18,7 +18,7 @@ public class Main {
         Order order4=new Order(new ArrayList<>(List.of(product1,  product4, product3,  product3)));
         Order order5=new Order(new ArrayList<>(List.of(product1, product2, product3, product4, product3)));
 
-        Customer customer=new Customer(new ArrayList<>(List.of(order)), "Jacek", LocalDate.now().minusYears(20));
+        Customer customer=new Customer(new ArrayList<>(List.of(order)), "Jacek", LocalDate.now().minusYears(20).minusDays(50));
         Customer customer2=new Customer(new ArrayList<>(List.of(order2, order5, order3)), "Wojtek", LocalDate.now().minusYears(25));
         Customer customer3=new Customer(new ArrayList<>(List.of(order2, order4)), "Krzysiek", LocalDate.now().minusYears(15));
         Customer customer4=new Customer(new ArrayList<>(List.of()), "Kamil", LocalDate.now().minusYears(19));
@@ -42,6 +42,7 @@ public class Main {
         System.out.println(shop.findTheMostSpendingCustomer());
         System.out.println(shop.findProductWithLeastQuantity());
         System.out.println(shop.findLateProducts());
+        System.out.println(shop.countCustomersBornInMonth());
 
     }
 }
