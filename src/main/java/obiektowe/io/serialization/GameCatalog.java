@@ -9,7 +9,7 @@ public class GameCatalog {
     private GameFileRepository fileRepository = new GameFileRepository();
 
     public GameCatalog() {
-       /* games = new ArrayList<>();
+        games = new ArrayList<>();
         GameDeveloper gameDeveloper = new GameDeveloper("Roman", "Project Manager");
         GameDeveloper gameDeveloper2 = new GameDeveloper("Zosia", "Junior");
         GameDeveloper gameDeveloper3 = new GameDeveloper("Magda", "Mid");
@@ -19,8 +19,8 @@ public class GameCatalog {
         Game game2 = new Game("Diablo", List.of(gameDeveloper3, gameDeveloper2, gameDeveloper5));
         Game game3 = new Game("HoMM", List.of(gameDeveloper));
         Game game4 = new Game("Skyrim", List.of(gameDeveloper, gameDeveloper2, gameDeveloper3, gameDeveloper4, gameDeveloper5));
-        games.addAll(List.of(game, game2, game3, game4));*/
-        //saveAllGames();
+        games.addAll(List.of(game, game2, game3, game4));
+        saveAllGames();
         readAllGames();
     }
 

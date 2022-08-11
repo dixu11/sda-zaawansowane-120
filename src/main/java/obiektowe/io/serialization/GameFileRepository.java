@@ -3,7 +3,6 @@ package obiektowe.io.serialization;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class GameFileRepository {
 
