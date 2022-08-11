@@ -1,18 +1,18 @@
 package obiektowe.io.serialization;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class GameFileRepository {
 
     private static final String PATH = "src/main/java/obiektowe/io/serialization/games.bin";
 
-    public void saveGame(Game game) {
-        System.out.println("Zapisuję w pliku!");
-        System.out.println(game);
+    public void saveGames(List<Game> games) {
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(PATH));
-            oos.writeObject(game);
+            oos.writeObject(games);
             oos.flush();
             oos.close();
         } catch (FileNotFoundException e) {
@@ -23,18 +23,17 @@ public class GameFileRepository {
         }
     }
 
-    public Optional<Game> readGame() {
+    public List<Game> readGame() {
         System.out.println("Odczytuję grę z pliku");
         try {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(PATH));
-            Game game = (Game) ois.readObject();
-            System.out.println(game);
+            List<Game> games= (List<Game>) ois.readObject();
             ois.close();
-            return Optional.of(game);
+            return games;
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return Optional.empty();
+        return new ArrayList<>();
     }
 
 
