@@ -1,4 +1,4 @@
-package obiektowe.io.serialization;
+package obiektowe.io.serializationJava;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 
 public class GameFileRepository {
 
-    private static final String PATH = "src/main/java/obiektowe/io/serialization/games.bin";
+    private static final String PATH = "src/main/java/obiektowe/io/serializationJava/games.bin";
 
     public void saveGames(List<Game> games) {
         try {

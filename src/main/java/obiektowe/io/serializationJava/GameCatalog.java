@@ -1,4 +1,4 @@
-package obiektowe.io.serialization;
+package obiektowe.io.serializationJava;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,4 @@
-package obiektowe.io.serialization;
-
-import java.util.ArrayList;
+package obiektowe.io.serializationJava;
 
 public class SerializationDemo {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package obiektowe.io.serialization;
+package obiektowe.io.serializationJson;
 
 import java.io.Serializable;
 
@@ -9,6 +9,22 @@ public class GameDeveloper implements Serializable {
     public GameDeveloper(String name, String rank) {
         this.name = name;
         this.rank = rank;
+    }
+
+    //wymagany bezparametrowy konstruktor
+    public GameDeveloper() {
+
+    }
+
+    //gettery do wszystkich pól
+
+
+    public String getName() {
+        return name;
+    }
+
+    public String getRank() {
+        return rank;
     }
 
     @Override
