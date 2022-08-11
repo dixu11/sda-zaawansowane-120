@@ -5,11 +5,11 @@ public class Window extends Item{
     private boolean open; // = false
 
     public Window() {
-        super("Window");
+        super("Okno");
     }
 
     @Override
-    public String use(Room room, Player player) { //todo, czy da się stąd wywalić?
+    public String use(GameInteractions gameInteractions) {
         open = !open;
         return open ? "Otwierasz okno" : "Zamykasz okno";
     }

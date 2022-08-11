@@ -8,8 +8,9 @@ public class Door extends Item{
     }
 
     @Override
-    public String use(Room room, Player player) {
-        if (player.hasItem(key)) {
+    public String use(GameInteractions gameInteractions) {
+        if (gameInteractions.hasPlayerGotItem(key)) {
+            gameInteractions.endGame();
             return"Otwierasz drzwi!";
         }
         return"Drzwi są zamknięte, znajdź klucz";

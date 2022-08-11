@@ -8,21 +8,22 @@ import java.util.Scanner;
 public class Controller {
 
     private Scanner scanner = new Scanner(System.in);
-    private Game game = new Game(); //Controller zwraca się do gry aby zlecić różne zadania
+    private GameEngine gameEngine = new Game(); //Controller zwraca się do gry aby zlecić różne zadania
 
 
     public void start() {
+        System.out.println("Witamy w grze Escape Room!");
         do {
             printMenu();
             int selection = selectOption();
             useSelectedItem(selection);
-        } while (true);//todo
+        } while (gameEngine.isRunning());
+        System.out.println("Koniec, gry, wygrywasz!");
     }
 
     private void printMenu() {
-        System.out.println("Witamy w grze Escape Room!");
         //przedmioty
-        List<Item> items = game.getItems();
+        List<Item> items = gameEngine.getItems();
         for (int i = 0; i < items.size(); i++) {
             // System.out.println(i+1 + ". " + items.get(i).getName());
             System.out.printf("%d. %s\n", i + 1, items.get(i).getName());
@@ -32,7 +33,7 @@ public class Controller {
     private int selectOption() { //todo zabezpieczyć przed błędami - podawania liter
         System.out.println("Co wybierasz?");
         int selection = scanner.nextInt();
-        if (selection < 1 || selection > game.howManyItems()) {
+        if (selection < 1 || selection > gameEngine.howManyItems()) {
             System.out.println("Wyszedłeś poza zakres przedmiotów!");
             return selectOption();
         }
@@ -40,7 +41,7 @@ public class Controller {
     }
 
     private void useSelectedItem(int itemNumber) {
-        String actionResult = game.useItem(itemNumber - 1);
+        String actionResult = gameEngine.useItem(itemNumber - 1);
         System.out.println(actionResult);
     }
 
