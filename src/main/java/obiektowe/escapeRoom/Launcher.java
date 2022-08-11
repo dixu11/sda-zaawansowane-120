@@ -8,9 +8,19 @@ public class Launcher {
     }
 }
 
-//więcej pokoi - różne układy przedmiotów
-//Więcej przedmiotów
-//Inna interakcja z aplikacją
+
+//więcej pokoi -
+// przejście przez drzwi przenosi do innego pomieszczenia z którego można potem wrócić.
+// Pokoje mogą mieć inne przedmioty, inne zagadki i może ich być wiele
+
+//Więcej przedmiotów - są inne przedmioty działające na zasadzie - wybieram i używam. Pozwalają zrobić ciekawsze zagadki
+// kraty, wajchy pułapki, szuflady, lustra, inne rodzaje kluczy
+
+//Inna interakcja z aplikacją - alternatywny tryb działania aplikacji - w okienku
+
+//zapis stanu gry - w pliku
+
+//Rozbudowane interakcje - po użyciu przedmiotu można wpisać hasło i przedmiot inaczej zareaguje na poprawne hasło
 
 
 //    int wiek = 40;
