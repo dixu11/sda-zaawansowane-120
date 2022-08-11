@@ -41,6 +41,11 @@ public class GameCatalog {
         fileRepository.saveGame(games.get(0));
     }
 
+    public void readAllGames() {
+        Optional<Game> gameOptional = fileRepository.readGame();
+        gameOptional.ifPresent(game -> System.out.println(game));
+    }
+
 
     @Override
     public String toString() {
